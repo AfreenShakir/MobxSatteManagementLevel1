@@ -1,2 +1,1 @@
-# MobxSatteManagementLevel1
-Created with CodeSandbox
+# MobxStateManagementLevel1
