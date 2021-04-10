@@ -27,7 +27,7 @@ class App extends Component {
         {this.counter}
         <div>
           <div>
-            <span class="increment">
+            <span className="increment">
               <button onClick={this.onIncrement} type="button">
                 Increment
               </button>
