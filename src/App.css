@@ -1,0 +1,144 @@
+.App {
+  height: 100vh;
+  overflow: hidden;
+}
+
+header {
+  background-color: crimson;
+  color: white;
+  height: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  flex-direction: row;
+  align-items: center;
+  position: fixed;
+  width: calc(100% - 40px);
+}
+header h1 {
+  font-weight: 300;
+}
+
+header form {
+  margin-left: auto;
+}
+
+header form input {
+  border: none;
+  height: 40px;
+  width: 300px;
+  padding: 0 20px;
+  font-size: 16px;
+  vertical-align: middle;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+}
+
+header form button {
+  height: 40px;
+  padding: 0 20px;
+  font-size: 14px;
+  font-weight: 700;
+  vertical-align: middle;
+  border: none;
+  background: salmon;
+  color: white;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+header .avatar img {
+  border-radius: 40px;
+  width: 40px;
+  height: 40px;
+  margin-left: 20px;
+}
+
+main {
+  display: flex;
+  height: calc(100% - 80px);
+  padding-top: 80px;
+}
+
+main.full .counter {
+  width: 100%;
+}
+main.full ul {
+  width: 0;
+}
+
+main ul {
+  margin: 0;
+  padding: 0;
+  list-style-position: inside;
+  list-style-type: none;
+  overflow: auto;
+  width: 50%;
+  transition: ease-in-out 0.25s width;
+}
+
+main ul li {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+main ul li span {
+  margin-left: auto;
+  background: rgba(0, 0, 0, 0.2);
+  font-size: 12px;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  transition: ease-in-out 0.25s background;
+}
+
+main ul li span:hover {
+  background: white;
+  color: salmon;
+}
+
+main ul li:nth-child(2n) {
+  background-color: salmon;
+  color: white;
+  font-size: 1.25em;
+}
+
+main .counter {
+  margin: 0;
+  padding: 20px;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  transition: ease-in-out 0.25s width;
+}
+main .counter .task-counter {
+  font-size: 4em;
+  color: rgba(0, 0, 0, 0.3);
+}
+main .counter .task-timer {
+  font-size: 4em;
+}
+.task-list {
+  display: contents;
+}
+/* Animation */
+.item-enter {
+  opacity: 0;
+}
+.item-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.item-exit {
+  opacity: 1;
+}
+.item-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
+}
