@@ -1,6 +1,6 @@
 import { decorate, observable, action, computed } from "mobx";
 
-export class TasksStore {
+class TasksStore {
   tasks: Array<string> = [];
 
   addTask(task: string) {
@@ -22,3 +22,5 @@ decorate(TasksStore, {
   tasks: observable,
   tasksCount: computed
 });
+
+export default  TasksStore;

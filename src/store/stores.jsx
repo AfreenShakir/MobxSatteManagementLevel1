@@ -1,8 +1,8 @@
-import { createContext, useContext } from "react";
-import { TasksStore } from "./tasks";
+// import { createContext, useContext } from "react";
+// import { TasksStore } from "./tasks";
 
-export const tasksStore = new TasksStore();
+// export const tasksStore = new TasksStore();
 
-export const storesContext = createContext({ tasksStore });
+// export const storesContext = createContext({ tasksStore });
 
-export const useStores = () => useContext(storesContext);
+// export const useStores = () => useContext(storesContext);

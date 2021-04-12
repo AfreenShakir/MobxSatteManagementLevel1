@@ -1,8 +1,7 @@
-import React, { useContext, useState, FormEvent } from "react";
-import { storesContext } from "../store/stores";
+import React, { useState, FormEvent } from "react";
+import { observer, inject } from "mobx-react";
 
-export default function TaskForm() {
-  const { tasksStore: store } = useContext(storesContext);
+function TaskForm(props) {
   const [task, setTask] = useState("");
 
   function handleChange(event: FormEvent<HTMLInputElement>) {
@@ -11,7 +10,7 @@ export default function TaskForm() {
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    store.addTask(task);
+    props.tasksStore.addTask(task);
     setTask("");
   }
 
@@ -27,3 +26,5 @@ export default function TaskForm() {
     </form>
   );
 }
+
+export default inject("tasksStore")(observer(TaskForm));

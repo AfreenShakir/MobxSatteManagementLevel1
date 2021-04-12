@@ -1,14 +1,12 @@
-import React, { useContext } from "react";
-import { useObserver } from "mobx-react";
-import { storesContext } from "../store/stores";
+import React, { Component } from "react";
 import TaskList from "./TaskList";
 import TasksCounter from "./Counter";
+import { observer, inject } from "mobx-react";
 
-export default function Main() {
-  const { tasksStore: store } = useContext(storesContext);
-
-  return useObserver(() => {
-    const hasTasks = store.tasksCount && store.tasksCount > 0;
+class Main extends Component {
+  render() {
+    const hasTasks =
+      this.props.tasksStore.tasksCount && this.props.tasksStore.tasksCount > 0;
     const mainClass = `${hasTasks ? "" : "full"}`;
 
     return (
@@ -17,5 +15,7 @@ export default function Main() {
         <TasksCounter />
       </main>
     );
-  });
+  }
 }
+
+export default inject("tasksStore")(observer(Main));

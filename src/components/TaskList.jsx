@@ -1,16 +1,17 @@
-import React, { useContext } from "react";
-import { storesContext } from "../store/stores";
+import React from "react";
+import { observer, inject } from "mobx-react";
 
-export default function TaskList() {
-  const { tasksStore: store } = useContext(storesContext);
-
+function TaskList(props) {
   return (
     <ul>
-      {store.tasks.map((task: string, index: number) => (
+      {props.tasksStore.tasks.map((task: string, index: number) => (
         <li>
-          {task} <span onClick={() => store.removeTask(index)}>DONE</span>
+          {task}{" "}
+          <span onClick={() => props.tasksStore.removeTask(index)}>DONE</span>
         </li>
       ))}
     </ul>
   );
 }
+
+export default inject("tasksStore")(observer(TaskList));

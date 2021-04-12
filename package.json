@@ -1,5 +1,5 @@
 {
-  "name": "mobx-with-react",
+  "name": "todolistwithmobxandreact",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,5 +16,5 @@
     "eject": "react-scripts eject"
   },
   "keywords": [],
-  "description": "A simple example of using MobX with React Hooks via `mobx-react-lite`"
+  "description": ""
 }
